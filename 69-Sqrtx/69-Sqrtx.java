@@ -1,0 +1,15 @@
+// Last updated: 4/24/2026, 8:15:05 AM
+class Solution {
+    public int mySqrt(int n) {
+        int low = 1;
+        int high = n;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (mid <= n / mid)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return high;
+    }
+}
